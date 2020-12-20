@@ -1,0 +1,28 @@
+version: '2.1'
+
+networks: 
+  fabric:
+services: 
+  org0_ca:
+    container_name: org0_ca
+    extends: 
+      file: ../../docker/base.yaml
+      service: ca-base
+    networks: 
+      - fabric
+    ports: 
+      - 8054:7054
+  org0_orderer1:
+    container_name: org0_orderer1
+    extends: 
+      file: ../../docker/base.yaml
+      service: orderer-base
+    environment:
+        - ORDERER_HOST=org0_orderer1
+        - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+        - ORDERER_GENERAL_LOCALMSPID=Org0MSP
+    volumes:
+      - ../../artifacts:/artifacts
+      - ./orderer1:/orderer
+    networks:
+      - fabric

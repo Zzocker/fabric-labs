@@ -1,0 +1,87 @@
+Organizations:
+  - &Org0
+      Name: Org0
+      ID: Org0MSP
+      MSPDir: organizations/org0/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('Org0MSP.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('Org0MSP.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('Org0MSP.admin')"
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+  Orderer: &OrdererCapabilities
+    V2_0: true
+  Application: &ApplicationCapabilities
+    V2_0: true
+Application: &ApplicationConfig
+  Policies:
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Endorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererConfig
+  OrdererType: solo
+  Addresses:
+    - org0_orderer1:7050
+  BatchSize:
+    MaxMessageCount: 500
+    AbsoluteMaxBytes: 10 MB
+    PreferredMaxBytes: 2 MB
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+  Capabilities:
+    <<: *OrdererCapabilities
+Channel: &ChannelConfig
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+  Capabilities:
+    <<: *ChannelCapabilities
+Profiles:
+  BootUp:
+    <<: *ChannelConfig
+    Orderer:
+      <<: *OrdererConfig
+      Organizations:
+        - *Org0
+    Consortiums:
+      SampleConsortium:

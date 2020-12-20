@@ -1,0 +1,22 @@
+version: '2.1'
+
+services: 
+  ca-base:
+    image: hyperledger/fabric-ca
+    environment: 
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_DEBUG=true
+      - FABRIC_CA_SERVER_HOME=/crypto
+    command: 'fabric-ca-server start -b registrar:pw'
+  orderer-base:
+    image: hyperledger/fabric-orderer:2.2
+    environment:
+      - ORDERER_GENERAL_GENESISMETHOD=file
+      - ORDERER_GENERAL_GENESISFILE=/artifacts/genesis.block
+      # - FABRIC_LOGGING_SPEC=DEBUG
+      - ORDERER_GENERAL_LOCALMSPDIR=/orderer/msp
+      - ORDERER_GENERAL_TLS_ENABLED=true
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/orderer/tls/server.key
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/orderer/tls/ca.crt]
+    command: orderer
