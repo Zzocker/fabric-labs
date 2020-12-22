@@ -7,3 +7,4 @@ fabric-ca-client-config.yaml
 config
 Issuer*
 config.yaml
+channel_updates/*

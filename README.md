@@ -21,3 +21,4 @@
 * [Lab 03: Defining a Consortium](docs/lab03.md)
 * [Lab 04: Creating a channel for a consortium](docs/lab04.md)
 * [Lab 05: Peers and Ledgers](docs/lab05.md)
+* [Lab 06: Applications and Smart Contract chaincode](docs/lab06.md)
