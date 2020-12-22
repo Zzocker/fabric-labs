@@ -11,7 +11,7 @@ services:
     networks: 
       - fabric
     ports: 
-      - 8054:7054
+      - 7054:7054
   org0_orderer1:
     container_name: org0_orderer1
     extends: 
@@ -26,3 +26,5 @@ services:
       - ./orderer1:/orderer
     networks:
       - fabric
+    ports: 
+      - 7050:7050

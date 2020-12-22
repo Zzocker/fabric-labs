@@ -16,4 +16,4 @@
 <!-- LINKS FOR LABS -->
 ## Labs
 
-* [Lab 01: Network With only system channel](docs/lab01.md)
+* [Lab 01: Creating the Network](docs/lab01.md)
