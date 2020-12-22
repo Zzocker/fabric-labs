@@ -12,3 +12,18 @@ services:
       - fabric
     ports: 
       - 8054:7054
+  org1_peer1:
+    container_name: org1_peer1
+    extends: 
+      file: ../../docker/base.yaml
+      service: peer-base
+    environment:
+        - CORE_PEER_ID=org1_peer1
+        - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
+        - CORE_PEER_LOCALMSPID=Org1MSP
+    volumes:
+      - ./peer1:/peer
+    networks:
+      - fabric
+    ports: 
+      - 8051:7051

@@ -20,3 +20,4 @@
 * [Lab 02: Adding Network Administrators](docs/lab02.md)
 * [Lab 03: Defining a Consortium](docs/lab03.md)
 * [Lab 04: Creating a channel for a consortium](docs/lab04.md)
+* [Lab 05: Peers and Ledgers](docs/lab05.md)
