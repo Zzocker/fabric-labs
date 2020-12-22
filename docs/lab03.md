@@ -6,7 +6,7 @@
 
   <h3 align="center">Learn-Fabric</h3>
 
-  <a href="https://hyperledger-fabric.readthedocs.io/en/latest/network/network.html">
+  <a href="https://hyperledger-fabric.readthedocs.io/en/latest/network/network.html#defining-a-consortium">
   <p align="center">
   Lab 03: Defining a Consortium
   </a>
@@ -33,8 +33,9 @@ organizations/org1/msp/
 │   └── cacert.pem
 └── config.yaml
 ```
-3. Print Org1
+3. Print Org1 and Org2
 ```
+configtxgen -printOrg Org1 > channel_updates/org1.json
 configtxgen -printOrg Org2 > channel_updates/org2.json
 ```
 4. Fetch ordererchannel config block using org0's either org1's admin certs
@@ -47,9 +48,10 @@ cd channel_updates
 ```
 configtxlator proto_decode --type common.Block --input config_block.pb | jq .data.data[0].payload.data.config > config.json
 ```
-7. Add org2.json to config.json and return *modified_config.json* 
+7. Add org2.json and org1.json to config.json and return *modified_config.json* 
 ```
-jq -s '.[0] * {"channel_group" : {"groups" : {"Consortiums" : {"groups" : {"SampleConsortium" : {"groups" : {"Org2" : .[1]}}}}}}}' config.json org2.json > modified_config.json
+jq -s '.[0] * {"channel_group" : {"groups" : {"Consortiums" : {"groups" : {"SampleConsortium" : {"groups" : {"Org1" : .[1]}}}}}}}' config.json org1.json > temp_modified_config.json
+jq -s '.[0] * {"channel_group" : {"groups" : {"Consortiums" : {"groups" : {"SampleConsortium" : {"groups" : {"Org2" : .[1]}}}}}}}' temp_modified_config.json org2.json > modified_config.json
 ```
 8. compute delta
 ```
