@@ -114,3 +114,11 @@ Profiles:
     Consortiums:
       SampleConsortium:
         Organizations:
+  # Org1AndOrg2Channel:
+  #   Consortium: SampleConsortium
+  #   <<: *ChannelConfig
+  #   Application:
+  #     <<: *ApplicationConfig
+  #     Organizations:
+  #       - *Org1
+  #       - *Org1

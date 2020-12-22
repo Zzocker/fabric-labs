@@ -19,3 +19,4 @@
 * [Lab 01: Creating the Network](docs/lab01.md)
 * [Lab 02: Adding Network Administrators](docs/lab02.md)
 * [Lab 03: Defining a Consortium](docs/lab03.md)
+* [Lab 04: Creating a channel for a consortium](docs/lab04.md)
