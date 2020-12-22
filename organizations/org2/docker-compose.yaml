@@ -1,0 +1,14 @@
+version: '2.1'
+
+networks: 
+  fabric:
+services: 
+  org2_ca:
+    container_name: org2_ca
+    extends: 
+      file: ../../docker/base.yaml
+      service: ca-base
+    networks: 
+      - fabric
+    ports: 
+      - 9054:7054
