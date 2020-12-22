@@ -13,6 +13,34 @@ Organizations:
         Admins:
           Type: Signature
           Rule: "OR('Org0MSP.admin')"
+  - &Org1
+      Name: Org1
+      ID: Org1MSP
+      MSPDir: organizations/org1/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('Org1MSP.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('Org1MSP.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('Org1MSP.admin')"
+  - &Org2
+      Name: Org2
+      ID: Org2MSP
+      MSPDir: organizations/org2/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('Org2MSP.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('Org2MSP.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('Org2MSP.admin')"
 Capabilities:
   Channel: &ChannelCapabilities
     V2_0: true
@@ -85,3 +113,4 @@ Profiles:
         - *Org0
     Consortiums:
       SampleConsortium:
+        Organizations:

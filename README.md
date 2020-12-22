@@ -17,3 +17,4 @@
 ## Labs
 
 * [Lab 01: Creating the Network](docs/lab01.md)
+* [Lab 02: Adding Network Administrators](docs/lab02.md)

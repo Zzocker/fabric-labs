@@ -2,14 +2,13 @@ version: '2.1'
 
 networks: 
   fabric:
-
 services: 
-  tls_ca:
-    container_name: tls_ca
+  org1_ca:
+    container_name: org1_ca
     extends: 
       file: ../../docker/base.yaml
       service: ca-base
     networks: 
       - fabric
     ports: 
-      - 7054:7054
+      - 8054:7054
