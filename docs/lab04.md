@@ -30,7 +30,7 @@
       <<: *ApplicationConfig
       Organizations:
         - *Org1
-        - *Org1
+        - *Org2
 ```
 2. Generate firstchannel.tx
 ```
