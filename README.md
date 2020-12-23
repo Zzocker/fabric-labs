@@ -26,3 +26,4 @@
 * [Lab 08: Adding another consortium definition](docs/lab08.md)
 * [Lab 09: Adding a new channel](docs/lab09.md)
 * [Lab 10: Adding another peer](docs/lab10.md)
+* [Lab 11: Joining a peer to multiple channels](docs/lab11.md)
