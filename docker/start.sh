@@ -25,7 +25,9 @@ case $1 in
     "org2_peer1")
         docker-compose --env-file $ENV_PATH -f $ROOT/organizations/org2/docker-compose.yaml up -d org2_peer1
     ;;
-
+    "org3_peer1")
+        docker-compose --env-file $ENV_PATH -f $ROOT/organizations/org3/docker-compose.yaml up -d org3_peer1
+    ;;
     *)
         echo "$1 doesn't exists"
     ;;
