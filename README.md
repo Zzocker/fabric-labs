@@ -22,3 +22,4 @@
 * [Lab 04: Creating a channel for a consortium](docs/lab04.md)
 * [Lab 05: Peers and Ledgers](docs/lab05.md)
 * [Lab 06: Applications and Smart Contract chaincode](docs/lab06.md)
+* [Lab 07: Network completed](docs/lab07.md)
