@@ -136,3 +136,11 @@ Profiles:
   #     Organizations:
   #       - *Org1
   #       - *Org2
+  # Org2AndOrg3Channel:
+  #   Consortium: NotSoSimpleConsortium
+  #   <<: *ChannelConfig
+  #   Application:
+  #     <<: *ApplicationConfig
+  #     Organizations:
+  #       - *Org2
+  #       - *Org3

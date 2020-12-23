@@ -24,3 +24,4 @@
 * [Lab 06: Applications and Smart Contract chaincode](docs/lab06.md)
 * [Lab 07: Network completed](docs/lab07.md)
 * [Lab 08: Adding another consortium definition](docs/lab08.md)
+* [Lab 09: Adding a new channel](docs/lab09.md)
