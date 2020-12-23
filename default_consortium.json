@@ -1,0 +1,18 @@
+{
+    "mod_policy": "/Channel/Orderer/Admins",
+    "policies": {},
+    "values": {
+      "ChannelCreationPolicy": {
+        "mod_policy": "/Channel/Orderer/Admins",
+        "value": {
+          "type": 3,
+          "value": {
+            "rule": "ANY",
+            "sub_policy": "Admins"
+          }
+        },
+        "version": "0"
+      }
+    },
+    "version": "0"
+  }

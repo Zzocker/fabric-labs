@@ -41,6 +41,20 @@ Organizations:
         Admins:
           Type: Signature
           Rule: "OR('Org2MSP.admin')"
+  - &Org3
+      Name: Org3
+      ID: Org3MSP
+      MSPDir: organizations/org3/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('Org3MSP.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('Org3MSP.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('Org3MSP.admin')"
 Capabilities:
   Channel: &ChannelCapabilities
     V2_0: true

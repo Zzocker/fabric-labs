@@ -13,6 +13,9 @@ case $1 in
     "org2ca")
         docker-compose --env-file $ENV_PATH -f $ROOT/organizations/org2/docker-compose.yaml up -d org2_ca
     ;;
+    "org3ca")
+        docker-compose --env-file $ENV_PATH -f $ROOT/organizations/org3/docker-compose.yaml up -d org3_ca
+    ;;
     "org0_orderer1")
         docker-compose --env-file $ENV_PATH -f $ROOT/organizations/org0/docker-compose.yaml up -d org0_orderer1
     ;;

@@ -8,3 +8,4 @@ config
 Issuer*
 config.yaml
 channel_updates/*
+lab00.md

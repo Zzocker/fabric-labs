@@ -1,0 +1,14 @@
+version: '2.1'
+
+networks: 
+  fabric:
+services: 
+  org3_ca:
+    container_name: org3_ca
+    extends: 
+      file: ../../docker/base.yaml
+      service: ca-base
+    networks: 
+      - fabric
+    ports: 
+      - 10054:7054
